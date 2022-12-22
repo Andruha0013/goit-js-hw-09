@@ -4,6 +4,29 @@ const refs={
 };
 
 
+refs.form.addEventListener("submit",(event)=>{
+  event.preventDefault();
+
+  let formData=getInputFormData(refs.form);
+
+  for(let i=0;i<formData.amount;i++)
+  {
+    createPromise(i, formData.delay)
+    .then(({ position, delay }) => {
+      console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
+      Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
+    })
+    .catch(({ position, delay }) => {
+      console.log(`❌ Rejected promise ${position} in ${delay}ms`);
+      Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
+  });
+    formData.delay+=formData.step;
+    //console.log(`delay=${typeof formData.delay}`);
+  }
+
+});
+
+
 
 function getInputFormData(form){
   let inputsData={};
@@ -45,25 +68,3 @@ function createPromise(position, delay) {
   //----------------the--end--of--creating--promise----------------
   return promise;
 }
-
-refs.form.addEventListener("submit",(event)=>{
-  event.preventDefault();
-
-  var formData=getInputFormData(refs.form);
-
-  for(let i=0;i<formData.amount;i++)
-  {
-    createPromise(i, formData.delay)
-    .then(({ position, delay }) => {
-      console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
-      Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
-    })
-    .catch(({ position, delay }) => {
-      console.log(`❌ Rejected promise ${position} in ${delay}ms`);
-      Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
-  });
-    formData.delay+=formData.step;
-    //console.log(`delay=${typeof formData.delay}`);
-  }
-
-});
