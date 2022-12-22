@@ -32,7 +32,7 @@ refs.form.addEventListener("submit",(event)=>{
 });
 
 
-/*-------------don`t work on git pages --(error='udefind key')????!!!!!!!!!!!!!---------------
+/*-------------don`t work on git pages --(error='udefind key line:38')????!!!!!!!!!!!!!---------------
 function getInputFormData(form){
   let inputsData={};
   for(key in form.elements)
@@ -54,7 +54,8 @@ function getInputFormData(form){
   }
   return inputsData;
 }
--------------------------------------------------------------------------*/
+//-------------------------------------------------------------------------
+*/
 
 function createPromise(position, delay) {
   //--------------create--promise------------------
