@@ -49,7 +49,7 @@ function createPromise(position, delay) {
 refs.form.addEventListener("submit",(event)=>{
   event.preventDefault();
 
-  let formData=getInputFormData(refs.form);
+  var formData=getInputFormData(refs.form);
 
   for(let i=0;i<formData.amount;i++)
   {
