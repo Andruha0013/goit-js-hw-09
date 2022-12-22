@@ -7,8 +7,13 @@ const refs={
 refs.form.addEventListener("submit",(event)=>{
   event.preventDefault();
 
-  let formData=getInputFormData(refs.form);
-
+  /*let formData=getInputFormData(refs.form);//-------------don`t work on git pages---------------*/
+  //----------------version 2-(for git)----------------
+  let formData={
+    "delay":  Number(refs.form.elements['delay'].value),
+    "step":   Number(refs.form.elements['step'].value),
+    "amount": Number(refs.form.elements['amount'].value),
+  };
   for(let i=0;i<formData.amount;i++)
   {
     createPromise(i, formData.delay)
@@ -27,7 +32,7 @@ refs.form.addEventListener("submit",(event)=>{
 });
 
 
-
+/*-------------don`t work on git pages????!!!!!!!!!!!!!---------------
 function getInputFormData(form){
   let inputsData={};
   for(key in form.elements)
@@ -49,6 +54,7 @@ function getInputFormData(form){
   }
   return inputsData;
 }
+-------------------------------------------------------------------------*/
 
 function createPromise(position, delay) {
   //--------------create--promise------------------
