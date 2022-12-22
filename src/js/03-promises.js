@@ -11,8 +11,8 @@ function getInputFormData(form){
   {
     if(form.elements[key].tagName=="INPUT")
     {
-      //console.log(`key=${key}, val=${form.elements[key].tagName}`);
-      //console.log(form.elements[key].value);
+      console.log(`key=${key}, val=${form.elements[key].tagName}`);
+      console.log(form.elements[key].value);
       try{
         inputsData[form.elements[key].name]=Number(form.elements[key].value);
       }
