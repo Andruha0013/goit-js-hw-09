@@ -16,7 +16,7 @@ refs.form.addEventListener("submit",(event)=>{
   };
   for(let i=0;i<formData.amount;i++)
   {
-    createPromise(i, formData.delay)
+    createPromise(i+1, formData.delay)
     .then(({ position, delay }) => {
       console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
       Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
@@ -32,7 +32,7 @@ refs.form.addEventListener("submit",(event)=>{
 });
 
 
-/*-------------don`t work on git pages????!!!!!!!!!!!!!---------------
+/*-------------don`t work on git pages --(error='udefind key')????!!!!!!!!!!!!!---------------
 function getInputFormData(form){
   let inputsData={};
   for(key in form.elements)

@@ -84,7 +84,7 @@ function myTimer(){
     }
     let outTime=convertMs(myTimerOptions.timeMS);
     //console.log(myTimerOptions.timeMS);
-    refs.daysOut.textContent=addLeadingZero(outTime.days,3);
+    refs.daysOut.textContent=addLeadingZero(outTime.days,2);
     refs.hoursOut.textContent=addLeadingZero(outTime.hours,2);
     refs.secondsOut.textContent=addLeadingZero(outTime.seconds,2);
     refs.minutesOut.textContent=addLeadingZero(outTime.minutes,2);
